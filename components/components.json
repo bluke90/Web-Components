@@ -1,6 +1,7 @@
 {
   "theme": "tcalp",
   "components": [
-    "modal"
+    "modal",
+    "paragraphBlock"
   ]
 }
