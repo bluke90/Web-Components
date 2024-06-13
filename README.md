@@ -1,5 +1,15 @@
 # Web Components Library
 
+Using native web components can be tricky sometimes, especially when used in conjunction with a CMS like Drupal. This web component library can be dropped into your drupal theme
+and by adding a few lines of code to your project you can easily import your web components just by adding the name of your component to the components.json file.
+
+## Features
+    - Easily add your web components to your drupal site
+    - Created a JavaScript array for accessing your html template files instead of appending them to the page.
+    - Handles ensuring files are imported in the correct order to prevent issues with web component JS files being loaded before template is appeneded
+    - Provides a standard way of accessing your template files from JS files
+
+
 ## Setup:
     - Add following theme hook to MYTHEME.theme
 ```php
