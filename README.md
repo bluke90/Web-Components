@@ -99,3 +99,17 @@ component-library:
         - Observed Attributes:
             - link - this is where you will provide the link to the file
 ![image](images/FileDownload.PNG)
+
+### PersonCard
+    - Provides a card with an image, name, and 2 extra fields for additional information
+        - Styling:
+            - 
+        - Slots: (Works best when using spans in slots)
+            - name - name of person
+            - field-1 - first field of information
+            - field-2 - second field of information
+        - Observed Attributes:
+            - link - link to headshot image
+            - alt-text - alt text for headshot image
+![image](images/PersonCard.PNG) 
+

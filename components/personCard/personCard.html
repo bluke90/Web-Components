@@ -1,0 +1,52 @@
+<template id="person-card">
+
+  <style>
+    .block {
+      width: fit-content;
+      margin: 1rem;
+      background-color: #fff;
+      box-shadow: 2px 2px 10px 5px #999999;
+      -webkit-box-shadow: 2px 2px 10px 5px #999999;
+      -moz-box-shadow: 2px 2px 10px 5px #999999;
+      padding-bottom: 1rem;
+    }
+    .information {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 10px;
+    }
+    .image {
+      object-fit: cover;
+    }
+    slot[name="name"] {
+      font-family: Oswald, sans-serif;
+      font-size: 150%;
+      font-weight: 400;
+      line-height: 28px;
+    }
+    slot[name="field-1"] {
+      font-family: Arial, Helvetica, serif;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    slot[name="field-2"] {
+      font-family: Arial, Helvetica, serif;
+      font-size: 1rem;
+    }
+
+  </style>
+
+  <div class="block">
+    <img class="image" src="" alt="" height="434" width="310" loading="lazy">
+
+    <div class="information">
+      <slot name="name"></slot>
+
+      <slot name="field-1"></slot>
+
+      <slot name="field-2"></slot>
+    </div>
+  </div>
+
+</template>

@@ -3,6 +3,7 @@
   "components": [
     "modal",
     "paragraphBlock",
-    "fileDownload"
+    "fileDownload",
+    "personCard"
   ]
 }
