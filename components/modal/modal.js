@@ -16,7 +16,7 @@ class SiteModal extends HTMLElement {
     wrapper.setAttribute('class', 'wrapper');
 
     // Append template to shadow root
-    this._template = importer.templates.find(c => c.component === 'siteModal');
+    this._template = importer.templates.find(c => c.component === 'modal');
     this.shadow.append(this._template.template.content.cloneNode(true));
 
     this._modal = this.shadow.querySelector('.modal');
