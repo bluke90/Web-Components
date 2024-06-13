@@ -75,4 +75,17 @@ component-library:
         - Slots: (Works best when using spans in slots)
             - title - displayed at top of block
             - content - displays body of block
+<<<<<<< Updated upstream
         - ObservedAttributes: 
+=======
+        - ObservedAttributes: 
+
+### FileDownload
+    - Provides a box with a file icon and file name that users can click in order to download the file
+        - Styling:
+            - Banner color uses --primary-color-1
+        - Slots: (Works best when using spans in slots)
+            - file-name - displayed above file icon at the top of the box.
+        - Observed Attributes:
+            - link - this is where you will provide the link to the file
+>>>>>>> Stashed changes
