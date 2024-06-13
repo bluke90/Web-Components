@@ -76,3 +76,13 @@ component-library:
             - title - displayed at top of block
             - content - displays body of block
         - ObservedAttributes: 
+        
+        ![img.png](img.png)
+### FileDownload
+    - Provides a box with a file icon and file name that users can click in order to download the file
+        - Styling:
+            - Banner color uses --primary-color-1
+        - Slots: (Works best when using spans in slots)
+            - file-name - displayed above file icon at the top of the box.
+        - Observed Attributes:
+            - link - this is where you will provide the link to the file
