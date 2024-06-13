@@ -78,8 +78,7 @@ component-library:
             - title - displayed at top of block
             - content - displays body of block
         - ObservedAttributes: 
-
-
+![image](images/ParagraphBlock.PNG)
 ### FileDownload
     ![image](https://github.com/bluke90/Web-Components/assets/7243563/d018591b-0331-4397-8cf3-c373c2f6b272)
     - Provides a box with a file icon and file name that users can click in order to download the file
@@ -89,4 +88,3 @@ component-library:
             - file-name - displayed above file icon at the top of the box.
         - Observed Attributes:
             - link - this is where you will provide the link to the file
-        
