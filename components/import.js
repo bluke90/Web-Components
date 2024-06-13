@@ -12,6 +12,16 @@ class ComponentImporter {
     this._init = this._init.bind(this);
   }
 
+  getBaseURL() {
+    let split = this.baseURL.split('/');
+    if (split[0] !== 'themes') {
+      while (split[0] !== 'themes') {
+        split.shift();
+      }
+    }
+    return split.join('/');
+  }
+
   importComponentJS (theme, component) {
     let script = document.createElement('script');
     script.src = '/themes/' + theme + '/components/' + component + '/' + component + '.js';

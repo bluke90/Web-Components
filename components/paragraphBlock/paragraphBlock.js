@@ -12,9 +12,6 @@ class ParagraphBlock extends HTMLElement {
       this._banner = this.shadow.querySelector('.banner');
     }
 
-    connectedCallback() {
-      // this.shadow.append(this._template.template.content.cloneNode(true));
-    }
 
 }
 customElements.define('paragraph-block', ParagraphBlock);
