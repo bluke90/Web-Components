@@ -60,7 +60,7 @@ component-library:
 
 ## Included Components
 ### Modal
-    ![image](https://github.com/bluke90/Web-Components/assets/7243563/47808ac2-63fe-4629-90f8-a68540d32092)
+    ![image](images/modal.PNG)
     - Generic modal
         - Styling:
             - Banner color uses --primary-color-1
@@ -70,17 +70,16 @@ component-library:
         - Observed Attributes:
             - open - when true, modal is displayed
 ### ParagraphBlock
-    ![image](https://github.com/bluke90/Web-Components/assets/7243563/aa1f5607-f769-41db-b703-4e558b99ff4d)
+    ![image](images/ParagraphBlock.PNG)
     - Simple block with a header and header banner, and a body of text below.
         - Styling:
             - Banner color uses --primary-color-1
         - Slots: (Works best when using spans in slots)
             - title - displayed at top of block
             - content - displays body of block
-        - ObservedAttributes: 
-![image](images/ParagraphBlock.PNG)
+        - ObservedAttributes:
 ### FileDownload
-    ![image](https://github.com/bluke90/Web-Components/assets/7243563/d018591b-0331-4397-8cf3-c373c2f6b272)
+    ![image](images/FileDownload.PNG)
     - Provides a box with a file icon and file name that users can click in order to download the file
         - Styling:
             - Banner color uses --primary-color-1
