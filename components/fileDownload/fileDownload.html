@@ -1,0 +1,58 @@
+<template id="file-download">
+  <style>
+    .block {
+      border:solid black 1px;
+      width: 20rem;
+      height: 10rem;
+      margin: 1rem;
+      position: relative;
+      border-radius: 10px;
+      background-color: #252525;
+    }
+
+    .block:hover {
+      box-shadow: 1px 1px 5px 1px #404040;
+      -webkit-box-shadow: 1px 1px 5px 1px #404040;
+      -moz-box-shadow: 1px 1px 5px 1px #404040;
+      background-color: #303030;
+    }
+
+    .block-link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-decoration: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    slot[name="file-name"] {
+      display: block;
+      color: white;
+      font-family: merriweather, serif;
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: 3%;
+      text-align: center;
+    }
+
+  </style>
+
+  <div class="block">
+
+    <a class="block-link" href="">
+
+      <label>
+        <slot name="file-name"></slot>
+      </label>
+
+      <img style="object-fit: scale-down;" src="" alt="Download File" class="icon" loading="lazy">
+    </a>
+
+
+  </div>
+
+</template>

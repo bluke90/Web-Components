@@ -1,18 +1,56 @@
-# Web Components Import Script
+# Web Components Library
 
 ## Setup:
+    - Add following theme hook to MYTHEME.theme
+```php
+    function HOOK_preprocess_html(&$variables) {
+      $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+    } 
+```
     - Place components folder at top level of your theme
+
     - Add theme name to the components.json file.
         *(theme name should match the folder containing your theme)
 
+    - Add components/import.js to libraries.yml with
+        jquery and drupalSettings as dependencies (see below)
+```yml
+component-library:
+  version: VERSION
+  js:
+    components/import.js:
+      weight: -1
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+```
 
-## Instructions:
+
+## Adding components Instructions:
     - Create a folder with the name of your web component
+
     - Add javascript file with the same name as folder
+
     - Add HTML template file with the same name as folder
+
     - Add Components to the components.json file under the "Components" section
+
     - Import script will automatically read in all of your
         javascript and HTML template files
+
+    - Be sure to use the following code to get the component template
+``` js
+    // Where COMPONENT_NAME = the name of your web component
+    importer.templates.find(c => c.component === 'COMPONENT_NAME');
+```
+    - Also be sure youre selecting the content and cloning the node as shown below
+```js
+    // Where this.shadow refrences your shadowRoot Instance
+    this.shadow.append(this._template.template.content.cloneNode(true));
+```
+
+## Drupal settings
+    - baseURL | provides the path to the theme (themes/MYTHEME)
 
 
 ## Included Components

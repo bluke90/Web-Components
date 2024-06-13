@@ -2,6 +2,7 @@
   "theme": "tcalp",
   "components": [
     "modal",
-    "paragraphBlock"
+    "paragraphBlock",
+    "fileDownload"
   ]
 }

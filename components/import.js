@@ -1,61 +1,73 @@
-$ = jQuery;
+class ComponentImporter {
 
-// ============= Functions =============
-function importComponentJS (theme, component) {
-  let script = document.createElement('script');
-  script.src = '/themes/' + theme + '/components/' + component + '/' + component + '.js';
-  document.head.appendChild(script);
-}
+  constructor($, drupalSettings) {
+    // get base url from drupal settings
+    this.baseURL = drupalSettings.path.themeUrl;
 
-async function importComponentHTML (theme, component) {
-  $.ajax({
-    url: "/themes/" + theme + "/components/" + component + "/" + component + ".html",
-    context: document.body,
-    success: function (result) {
-      document.body.innerHTML += result;
+    this.components = [];
+    this.templates = [];
+    this.themeName = this.baseURL.split('/')[1];
+    this.jsonPath = "/" + this.baseURL + '/components' + '/components.json';
+
+    this._init = this._init.bind(this);
+  }
+
+  importComponentJS (theme, component) {
+    let script = document.createElement('script');
+    script.src = '/themes/' + theme + '/components/' + component + '/' + component + '.js';
+    document.head.appendChild(script);
+  }
+
+  importComponentHTML (component) {
+    // set the path to the component html file
+    let src = '/themes/' + this.themeName + '/components/' + component + '/' + component + '.html';
+
+    // fetch the html file
+    fetch(src).then(response => response.text()).then((data) => {
+      let template = new DOMParser().parseFromString(data, 'text/html');
+      let obj = {component: component, template: template.firstChild.firstChild.firstChild};
+      this.templates.push(obj);
+    });
+  }
+
+  async importComponentHTMLasync (component) {
+    // set the path to the component html file
+    let src = '/themes/' + this.themeName + '/components/' + component + '/' + component + '.html';
+
+    // fetch the html file
+    await fetch(src).then(response => response.text()).then((data) => {
+      let template = new DOMParser().parseFromString(data, 'text/html');
+      let obj = {component: component, template: template.firstChild.firstChild.firstChild};
+      // add the template to the templates array
+      this.templates.push(obj);
+    });
+  }
+
+  async loadJsonData (jsonPath) {
+    // Use path to read JSON file
+    await fetch(jsonPath).then(response => response.text()).then((data) => {
+      const obj = JSON.parse(data);
+      this.themeName = obj.theme;
+      this.components = obj.components;
+    });
+  }
+
+  async _init() {
+    // get json data
+    await this.loadJsonData(this.jsonPath);
+    // import all the html files and add to templates array
+    for (const component of this.components) {
+      await this.importComponentHTMLasync(component);
     }
-  });
-}
-
-async function loadJsonData (jsonPath) {
-  // Use path to read JSON file
-  await fetch(jsonPath).then(response => response.text()).then((data) => {
-    const obj = JSON.parse(data);
-    theme = obj.theme;
-    components = obj.components;
-  });
-}
-// ============= Script =============
-
-
-// Declare variables
-let theme = '';
-let components = [];
-
-// Get the path of the current script
-let script = document.currentScript;
-// Use script path to determine JSON path
-let env = script.src.split('/');
-env.pop();
-env.pop();
-while (env[0] !== 'themes') {
-  env.shift();
-}
-env = env.join('/');
-jsonPath = "/" + env + '/components' + '/components.json';
-
-// Load JSON data asynchronously
-loadJsonData(jsonPath).then(() => {
-  // Import component JS and HTML
-  components.forEach((component) => {
-    if (component !== '') {
-      importComponentHTML(theme, component).then(r =>
-      importComponentJS(theme, component));
+    // import all js files
+    for (const component of this.components) {
+      this.importComponentJS(this.themeName, component);
     }
-  });
-});
+  }
 
+}
 
-
+let importer = new ComponentImporter(jQuery, drupalSettings);
+jQuery(document).ready(importer._init);
 
 

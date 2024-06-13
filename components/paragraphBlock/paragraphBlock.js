@@ -1,20 +1,20 @@
-
-
 class ParagraphBlock extends HTMLElement {
     constructor() {
-        super();
+      super();
+      // Create a shadow root
+      this.shadow = this.attachShadow({mode: 'closed'});
 
-        // Create a shadow root
-        this.shadow = this.attachShadow({mode: 'closed'});
+      // Append template to shadow root
+      this._template = importer.templates.find(c => c.component === 'paragraphBlock');
+      this.shadow.append(this._template.template.content.cloneNode(true));
 
-        // Append template to shadow root
-        const template = document.getElementById('paragraph-block').content.cloneNode(true);
-        this.shadow.append(template);
-
-        this._Block = this.shadow.querySelector('.block');
-        this._banner = this.shadow.querySelector('.banner');
+      this._Block = this.shadow.querySelector('.block');
+      this._banner = this.shadow.querySelector('.banner');
     }
 
+    connectedCallback() {
+      // this.shadow.append(this._template.template.content.cloneNode(true));
+    }
 
 }
 customElements.define('paragraph-block', ParagraphBlock);
