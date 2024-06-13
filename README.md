@@ -49,8 +49,13 @@ component-library:
     this.shadow.append(this._template.template.content.cloneNode(true));
 ```
 
-## Drupal settings
-    - baseURL | provides the path to the theme (themes/MYTHEME)
+## Added JavaScript variables
+    - baseURL | returns the path to the theme (themes/MYTHEME)
+    - themeName | returns the name of the theme (MYTHEME)
+
+## Notes
+    - Drupal: When using web components in twig template, {{ title_prefix }} and {{ title_suffix }} in order to 
+        maintain ability to edit block content inside layout builder (See examples folder)
 
 
 ## Included Components
