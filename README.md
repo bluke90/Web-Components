@@ -69,7 +69,7 @@ component-library:
         - Observed Attributes:
             - open - when true, modal is displayed
 ![image](images/modal.PNG)
-
+ 
 ### ParagraphBlock
     - Simple block with a header and header banner, and a body of text below.
         - Styling:
