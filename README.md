@@ -127,3 +127,20 @@ component-library:
             - pinterest-link: link to pinterest page
             - fill-color: color of the icons (default is white)
 ![image](images/SocialLinks.PNG)
+
+### ContactBlock
+    - Provides a block with a company logo, company name, and 4 extra fields for additional address information and a block for email, phone, and fax.
+        - Styling:
+            - Icon default resolution 75x55
+        - Slots: (Works best when using spans in slots)
+            - name - name of person
+            - address-field-1 - first field of information
+            - address-field-2 - second field of information
+            - address-field-3 - third field of information
+            - address-field-4 - fourth field of information
+        - Observed Attributes:
+            - logo-link - link to company logo
+            - email - email address
+            - phone - phone number
+            - fax - fax number
+![image](images/ContactBlock.PNG)
