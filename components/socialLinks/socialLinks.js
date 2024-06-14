@@ -13,13 +13,13 @@ class SocialLinks extends HTMLElement {
 
     // get the social links
     this._facebook = this.shadow.querySelector('.facebook-block');
-    this._facebook.display = 'none';
+    this._facebook.style.display = 'none';
     this._x = this.shadow.querySelector('.x-block');
-    this._x.display = 'none';
+    this._x.style.display = 'none';
     this._instagram = this.shadow.querySelector('.instagram-block');
-    this._instagram.display = 'none';
+    this._instagram.style.display = 'none';
     this._pinterest = this.shadow.querySelector('.pinterest-block');
-    this._pinterest.display = 'none';
+    this._pinterest.style.display = 'none';
 
     // get icons
     this._icons = this.shadow.querySelectorAll('svg');
@@ -34,6 +34,7 @@ class SocialLinks extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     // check for value change
     if (oldValue === newValue) return;
+    if (newValue.length < 1) return;
 
     switch (name) {
       case 'facebook-link':
@@ -63,25 +64,25 @@ class SocialLinks extends HTMLElement {
   _setFacebookLink() {
     if (this.getAttribute('facebook-link') === '') return;
     this._facebook.href = this.getAttribute('facebook-link');
-    this._facebook.display = 'block';
+    this._facebook.style.display = 'block';
   }
 
   _setXLink() {
-    if (this.getAttribute('twitter-link') === '') return;
+    if (this.getAttribute('x-link') === '') return;
     this._x.href = this.getAttribute('twitter-link');
-    this._x.display = 'block';
+    this._x.style.display = 'block';
   }
 
   _setInstagramLink() {
     if (this.getAttribute('instagram-link') === '') return;
     this._instagram.href = this.getAttribute('instagram-link');
-    this._instagram.display = 'block';
+    this._instagram.style.display = 'block';
   }
 
   _setPinterestLink() {
     if (this.getAttribute('pinterest-link') === '') return;
     this._pinterest.href = this.getAttribute('pinterest-link');
-    this._pinterest.display = 'block';
+    this._pinterest.style.display = 'block';
   }
 }
 customElements.define('social-links', SocialLinks);
