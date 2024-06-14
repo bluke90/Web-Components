@@ -64,8 +64,9 @@ component-library:
     - themeName | returns the name of the theme (MYTHEME)
 
 ## Notes
-    - Drupal: When using web components in twig template, {{ title_prefix }} and {{ title_suffix }} in order to 
-        maintain ability to edit block content inside layout builder (See examples folder)
+    - Drupal: When using web components in twig template, {{ title_prefix }} and {{ title_suffix }}
+        are located outside of your web component tags in order to maintain
+        ability to edit block content inside layout builder (See examples folder)
 
 
 ## Included Components
@@ -103,7 +104,7 @@ component-library:
 ### PersonCard
     - Provides a card with an image, name, and 2 extra fields for additional information
         - Styling:
-            - 
+            - Image default resolution 310x434
         - Slots: (Works best when using spans in slots)
             - name - name of person
             - field-1 - first field of information
@@ -113,3 +114,16 @@ component-library:
             - alt-text - alt text for headshot image
 ![image](images/PersonCard.PNG) 
 
+### SocialLinks
+    - Provides a card with social media icons that link to the provided social media pages
+        - Styling:
+            - 
+        - Slots: (Works best when using spans in slots)
+            - 
+        - Observed Attributes:
+            - facebook-link: link to facebook page
+            - twitter-link: link to twitter page
+            - instagram-link: link to instagram page
+            - pinterest-link: link to pinterest page
+            - fill-color: color of the icons (default is white)
+![image](images/SocialLinks.PNG)
