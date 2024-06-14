@@ -21,6 +21,9 @@ class SiteModal extends HTMLElement {
 
     this._modal = this.shadow.querySelector('.modal');
     this.style.display = 'none';
+
+    this._banner = this.shadow.querySelector('.modal-banner');
+    this._banner.style.backgroundImage = "url('/" + importer.baseURL + "/components/modal/background.png')";
   }
 
   // ======= Observed Attributes =======
