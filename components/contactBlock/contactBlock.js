@@ -26,7 +26,7 @@ class ContactBlock extends HTMLElement {
       icon: this.shadow.querySelector('.fax > .flex-box > .icon')
     };
     this._logo = this.shadow.querySelector('.logo');
-    this._logo.src = "/" + importer.baseURL + "/components/contactBlock/logo.png";
+    this._logo.src = importer.baseURL + "/components/contactBlock/logo.png";
 
     this._init_();
   }
@@ -36,9 +36,9 @@ class ContactBlock extends HTMLElement {
     this._phone.self.style.display = "none";
     this._fax.self.style.display = "none";
 
-    this._email.icon.style.backgroundImage = "url('/" + importer.baseURL + "/components/contactBlock/email-icon.png');";
-    this._phone.icon.style.backgroundImage = "url('/" + importer.baseURL + "/components/contactBlock/phone-icon.png');";
-    this._fax.icon.style.backgroundImage = "url('/" + importer.baseURL + "/components/contactBlock/fax-icon.png');";
+    this._email.icon.style.backgroundImage = "url('" + importer.baseURL + "/components/contactBlock/email-icon.png');";
+    this._phone.icon.style.backgroundImage = "url('" + importer.baseURL + "/components/contactBlock/phone-icon.png');";
+    this._fax.icon.style.backgroundImage = "url('" + importer.baseURL + "/components/contactBlock/fax-icon.png');";
   }
 
   static get observedAttributes() {

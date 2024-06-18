@@ -10,7 +10,7 @@ class FileDownload extends HTMLElement {
 
     this._anchor = this.shadow.querySelector('a');
     this._img = this.shadow.querySelector('img');
-    this._img.src = "/" + importer.baseURL + '/components/fileDownload/icon.png';
+    this._img.src = importer.baseURL + '/components/fileDownload/icon.png';
   }
 
   static get observedAttributes() {

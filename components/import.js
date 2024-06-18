@@ -2,12 +2,12 @@ class ComponentImporter {
 
   constructor($, drupalSettings) {
     // get base url from drupal settings
-    this.baseURL = drupalSettings.path.themeUrl;
+    this.baseURL = "/" + drupalSettings.path.themeUrl;
 
     this.components = [];
     this.templates = [];
     this.themeName = this.baseURL.split('/')[1];
-    this.jsonPath = "/" + this.baseURL + '/components' + '/components.json';
+    this.jsonPath = this.baseURL + '/components' + '/components.json';
 
     this._init = this._init.bind(this);
   }
@@ -24,13 +24,13 @@ class ComponentImporter {
 
   importComponentJS (theme, component) {
     let script = document.createElement('script');
-    script.src = '/themes/' + theme + '/components/' + component + '/' + component + '.js';
+    script.src = this.baseURL + '/components/' + component + '/' + component + '.js';
     document.head.appendChild(script);
   }
 
   importComponentHTML (component) {
     // set the path to the component html file
-    let src = '/themes/' + this.themeName + '/components/' + component + '/' + component + '.html';
+    let src = this.baseURL + '/components/' + component + '/' + component + '.html';
 
     // fetch the html file
     fetch(src).then(response => response.text()).then((data) => {
@@ -42,7 +42,7 @@ class ComponentImporter {
 
   async importComponentHTMLasync (component) {
     // set the path to the component html file
-    let src = '/themes/' + this.themeName + '/components/' + component + '/' + component + '.html';
+    let src = this.baseURL + '/components/' + component + '/' + component + '.html';
 
     // fetch the html file
     await fetch(src).then(response => response.text()).then((data) => {
