@@ -1,4 +1,4 @@
-# Web Components Library
+# Web Components Library (Drupal)
 
 Using native web components can be tricky sometimes, especially when used in conjunction with a CMS like Drupal. This web component library can be dropped into your drupal theme
 and by adding a few lines of code to your project you can easily import your web components just by adding the name of your component to the components.json file.
@@ -8,6 +8,11 @@ and by adding a few lines of code to your project you can easily import your web
     - Created a JavaScript array for accessing your html template files instead of appending them to the page.
     - Handles ensuring files are imported in the correct order to prevent issues with web component JS files being loaded before template is appeneded
     - Provides a standard way of accessing your template files from JS files
+
+## Blazor Setup
+    - Place components folder at top level of your wwwroot folder
+    - replace import.js and components.json with the ones in the Blazor folder
+    - Add import.js and jQuery to your App.razor file
 
 
 ## Setup:

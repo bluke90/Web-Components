@@ -1,0 +1,10 @@
+{
+  "components": [
+    "modal",
+    "paragraphBlock",
+    "fileDownload",
+    "personCard",
+    "socialLinks",
+    "contactBlock"
+  ]
+}
