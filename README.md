@@ -33,8 +33,7 @@ and by adding a few lines of code to your project you can easily import your web
 component-library:
   version: VERSION
   js:
-    components/import.js:
-      weight: -1
+    components/import.js: {}
   dependencies:
     - core/jquery
     - core/drupalSettings
