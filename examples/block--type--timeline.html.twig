@@ -1,0 +1,35 @@
+{%
+    set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'block--timeline',
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h1{{ title_attributes }} class="center-text">{{ label }}</h1>
+    {% endif %}
+    {{ title_suffix }}
+
+    {% block content %}
+
+        <time-line>
+            <span slot="y1-year">{{ content.field_y1.0["#context"].value }}</span>
+            <span slot="y1-content">{{ content.field_y1_content.0["#context"].value }}</span>
+
+            <span slot="y2-year">{{ content.field_y2.0["#context"].value }}</span>
+            <span slot="y2-content">{{ content.field_y2_content.0["#context"].value }}</span>
+
+            <span slot="y3-year">{{ content.field_y3.0["#context"].value }}</span>
+            <span slot="y3-content">{{ content.field_y3_content.0["#context"].value }}</span>
+
+            <span slot="y4-year">{{ content.field_y4.0["#context"].value }}</span>
+            <span slot="y4-content">{{ content.field_y4_content.0["#context"].value }}</span>
+        </time-line>
+
+
+    {% endblock %}
+    <hr>
+</div>

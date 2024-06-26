@@ -1,0 +1,216 @@
+﻿<template id="time-line">
+
+    <style>
+        .timeline {
+            text-align: center;
+            width: 1400px;
+        }
+        .timeline .year {
+            display: inline-block;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+        }
+        .timeline .year span {
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+        .timeline .year:after {
+            content: "";
+            display: block;
+            width: 80%;
+            margin: auto;
+            height: 4px;
+            background: #660000;
+        }
+        .timeline .year--end:before {
+            content: "";
+            display: block;
+            width: 80%;
+            margin: auto;
+            height: 4px;
+            background: #660000;
+        }
+        .timeline .year--end:after {
+            content: none;
+        }
+        .timeline .days {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .timeline .days .day {
+            width: 100%;
+            float: left;
+        }
+        .timeline .days .day .events {
+            position: relative;
+            float: left;
+            border-right: 1px solid #660000;
+            padding: 30px;
+            text-align: right;
+            width: calc(45% + 6px);
+        }
+        .timeline .days .day .events:after {
+            content: "";
+            width: 40%;
+            display: inline-block;
+            height: 1px;
+            background: #660000;
+            position: absolute;
+            right: 0;
+        }
+        .timeline .days .day .events .date {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            padding: 30px;
+            text-align: left;
+            color: #660000;
+            font-size: 24px;
+            white-space: nowrap;
+        }
+        .timeline .days .day .events .day__img {
+            margin-right: -30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline .days .day .events .day__img img {
+            display: block;
+            float: right;
+        }
+        .timeline .days .day .events .day__img .caption {
+            position: absolute;
+            margin: 0;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+        .timeline .days .day:nth-child(odd) .events {
+            width: calc(46% - 1px);
+            float: right;
+            border-right: 0;
+            border-left: 1px solid #660000;
+            text-align: left;
+        }
+        .timeline .days .day:nth-child(odd) .events:after {
+            right: auto;
+            left: 0;
+        }
+        .timeline .days .day:nth-child(odd) .events .date {
+            left: auto;
+            right: 100%;
+            text-align: right;
+        }
+        .timeline .days .day:nth-child(odd) .events .day__img {
+            margin-right: auto;
+            margin-left: -30px;
+        }
+        .timeline .days .day:nth-child(odd) .events .day__img img {
+            float: left;
+        }
+        .timeline .days .day:nth-child(odd) .events .day__img .caption {
+            right: auto;
+            left: 0;
+        }
+
+        @media only screen and (min-width: 1281px) and (max-width: 1920px) {
+            .timeline {
+                width: 1100px;
+            }
+
+            .timeline .days .day:nth-child(odd) .events {
+                width: 45%;
+            }
+            .timeline .days .day .events {
+                width: 44%;
+            }
+        }
+
+        /* Small desktops and larger tablets */
+        @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+            .timeline {
+                width: 980px;
+            }
+            .timeline .days .day:nth-child(odd) .events {
+                width: 44%;
+            }
+            .timeline .days .day .events {
+                width: calc(44% - 3px);
+            }
+        }
+
+        /* Tablets (portrait and landscape) */
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
+            .timeline {
+                width: 650px;
+            }
+            .timeline .days .day:nth-child(odd) .events {
+                width: calc(41% + 3px);
+            }
+            .timeline .days .day .events {
+                width: 40%;
+            }
+            .timeline .days .day .events:after {
+                width: 60%;
+            }
+        }
+
+        /* Mobile devices */
+        @media only screen and (max-width: 768px) {
+            .timeline {
+                width: 400px;
+            }
+            .timeline .days .day:nth-child(odd) .events {
+                width: 35%;
+            }
+            .timeline .days .day .events {
+                width: calc(35% - 1px);
+            }
+            .timeline .days .day .events:after {
+                width: 60%;
+            }
+        }
+        
+    </style>
+    
+
+    <div class="timeline">
+        <div class="year">
+            <div class="inner"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
+        <ul class="days">
+            <li class="day">
+                <div class="events">
+                    
+                    <p><slot name="y1-content"></slot></p>
+                    <div class="date"><slot name="y1-year"></slot></div>
+                </div>
+            </li>
+            <li class="day">
+                <div class="events">
+                    <p><slot name="y2-content"></slot></p>
+                    <div class="date"><slot name="y2-year"></slot></div>
+                </div>
+            </li>
+            <li class="day">
+                <div class="events">
+                    <p><slot name="y3-content"></slot></p>
+                    <div class="date"><slot name="y3-year"></slot></div>
+                </div>
+            </li>
+            <li class="day">
+                <div class="events">
+                    <p><slot name="y4-content"></slot></p>
+                    <div class="date"><slot name="y4-year"></slot></div>
+                </div>
+            </li>
+        </ul>
+        <div class="year year--end">
+            <div class="inner"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
+    </div>
+</template>

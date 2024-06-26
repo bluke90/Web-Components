@@ -148,3 +148,20 @@ component-library:
             - phone - phone number
             - fax - fax number
 ![image](images/ContactBlock.PNG)
+
+### Timeline
+    - Provides a timeline with a list of events
+        - Styling:
+            - 
+        - Slots: (Works best when using spans in slots)
+            - y1-year - year of first event
+            - y1-content - event of first year
+            - y2-year - year of second event
+            - y2-content - event of second year
+            - y3-year - year of third event
+            - y3-content - event of third year
+            - y4-year - year of fourth event
+            - y4-content - event of fourth year
+        - Observed Attributes:
+            -
+![image](images/timeline.PNG)
