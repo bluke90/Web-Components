@@ -1,0 +1,43 @@
+{%
+    set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h1{{ title_attributes }}>{{ label }}</h1>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+
+        <expandable-link text="{{ content.field_primary_link_text.0["#context"].value }}" color="#96253c">
+            <ul slot="links">
+
+        {% for link in content.field_links["#items"] %}
+
+            {# get url and format it for anchor tag #}
+            {% set uri = link.uri %}
+
+            {% if uri matches '{^https?://}' %}
+                {% set url = uri %}
+            {% elseif uri matches '{^internal:}' %}
+                {% set url = uri|split(':')[1] %}
+            {% elseif uri matches '{^entity:}' %}
+                {% set url = path('entity.node.canonical', {'node':  uri | split('/')[1]}) %}
+            {% else %}
+                {% set url = uri %}
+            {% endif %}
+
+            {# add link to list #}
+
+            <a href="{{ url }}" class="expandable-link">{{ link.title }}</a>
+
+        {% endfor %}
+            </ul>
+        </expandable-link>
+
+    {% endblock %}
+</div>

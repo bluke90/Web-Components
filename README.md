@@ -1,4 +1,4 @@
-# Web Components Library (Drupal)
+# Web Components Library (Drupal and Blazor)
 
 Using native web components can be tricky sometimes, especially when used in conjunction with a CMS like Drupal. This web component library can be dropped into your drupal theme
 and by adding a few lines of code to your project you can easily import your web components just by adding the name of your component to the components.json file.
@@ -165,3 +165,16 @@ component-library:
         - Observed Attributes:
             -
 ![image](images/timeline.PNG)
+
+### ExpandableLink
+    - Provides a link that expands to show more links when clicked
+        - Styling:
+            - See obsereved attributes for styling options
+        - Slots:
+            - links - list of links to display (use a list <ul> for best results)
+        - Observed Attributes:
+            - Color - color of the link (default is black)
+            - link - adds link to the main anchor tag
+            - text - adds text for the main anchor tag
+            - font-size - sets font size of main anchor tag
+![image](images/expandableLink.PNG)

@@ -1,0 +1,71 @@
+﻿<template id="expandable-link">
+
+    <style>
+
+        .wrapper {
+            border-bottom: solid #454545 1px;
+            margin-bottom: 1rem;
+        }
+
+        .link {
+            text-decoration: none;
+            font-family: oswald, sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.25px;
+        }
+
+        .link:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .link:after{
+            content: "";
+            margin:0 0.5em;
+            display:inline-block;
+            border: 7px solid transparent;
+            border-top:8px solid gray;
+            border-bottom:0 none;
+            transform:rotate(270deg);
+        }
+
+        .link.expand:after {
+            transform: rotate(360deg);
+        }
+
+        .list-container {
+            height: auto;
+            max-height: 0;
+            transition: max-height 0.3s linear;
+            overflow-y: clip;
+        }
+
+        slot[name="links"]::slotted(ul) {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        slot[name="links"]::slotted(li) {
+        }
+
+        slot[name="links"]::slotted(a) {
+            text-decoration: none;
+        }
+
+
+    </style>
+
+
+    <div class="wrapper">
+        <a id="top-link" href="#" class="link"></a>
+        <div class="list-container" style="">
+            <slot name="links"></slot>
+        </div>
+    </div>
+
+
+
+</template>
