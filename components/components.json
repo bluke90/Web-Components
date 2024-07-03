@@ -1,12 +1,14 @@
 {
   "theme": "tcalp",
   "components": [
+    "timelineEvent",
+    "timeline",
     "modal",
     "paragraphBlock",
     "fileDownload",
     "personCard",
     "socialLinks",
     "contactBlock",
-    "timeline"
+    "expandableLink"
   ]
 }

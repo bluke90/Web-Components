@@ -154,17 +154,21 @@ component-library:
         - Styling:
             - 
         - Slots: (Works best when using spans in slots)
-            - y1-year - year of first event
-            - y1-content - event of first year
-            - y2-year - year of second event
-            - y2-content - event of second year
-            - y3-year - year of third event
-            - y3-content - event of third year
-            - y4-year - year of fourth event
-            - y4-content - event of fourth year
+            - [Component]TimelineEvent - see component
         - Observed Attributes:
             -
+### TimelineEvent
+    - Provides a single event for the timeline component
+        - Styling:
+            -  
+        - Slots: (Works best when using spans in slots)
+            - content - text content of event
+        - Observed Attributes:
+            - year - year of event
+            - image - path to image for event
+            - image-alt - alt text for image
 ![image](images/timeline.PNG)
+
 
 ### ExpandableLink
     - Provides a link that expands to show more links when clicked
