@@ -1,0 +1,109 @@
+<template id="modal-view">
+
+    <style>
+
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .wrapper {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+            max-width: 80%;
+            min-width: 40%;
+            max-height: 70rem;
+            overflow-y: clip;
+            margin: auto;
+        }
+
+        .modal {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow-y: auto;
+            max-height: 65rem;
+            margin: 1rem auto 5rem auto;
+            overflow-wrap: anywhere;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #close-modal {
+            background-color: transparent;
+            border: none;
+            color: #96253c;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            align-self: self-start;
+        }
+
+        .binder {
+            color: #96253c;
+            text-decoration: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: list-item;
+        }
+        .binder:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary-color-1);
+            color: white !important;
+            text-decoration: none !important;
+            display: block !important;
+        }
+
+        slot[name="banner"] {
+            float: left;
+            text-align: left;
+        }
+        slot[name="banner"]::slotted(h2, h3, h4, h5, h6) {
+            margin: 0.25rem 0;
+            font-size: 1.5rem;
+            color: black;
+            font-weight: bold;
+        }
+
+    </style>
+
+
+    <a class="binder" href="#modal-view">Open Modal</a>
+
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="banner">
+
+                <slot name="banner"></slot>
+                <button id="close-modal">X</button>
+            </div>
+            <div class="modal">
+                <slot name="content"></slot>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</template>

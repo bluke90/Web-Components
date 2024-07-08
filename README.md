@@ -182,3 +182,15 @@ component-library:
             - text - adds text for the main anchor tag
             - font-size - sets font size of main anchor tag
 ![image](images/expandableLink.PNG)
+
+### ModalView
+    - Provides a modal that displays a view
+        - Styling:
+            - 
+        - Slots:
+            - Banner - Text to display at the top of the modal
+            - content - content to display in the modal
+        - Observed Attributes:
+            - text - Text to display in the link that will open the modal
+            - button (true or false) - if true, a button will be displayed instead of a link
+![image](images/modalView.PNG)

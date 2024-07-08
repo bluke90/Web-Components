@@ -9,6 +9,7 @@
     "personCard",
     "socialLinks",
     "contactBlock",
-    "expandableLink"
+    "expandableLink",
+    "modalView"
   ]
 }
