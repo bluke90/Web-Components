@@ -1,8 +1,10 @@
 {
-  "theme": "tcalp",
+  "theme": "THEME_NAME",
   "components": [
     "timelineEvent",
     "timeline",
+    "navMenu",
+    "navItem",
     "modal",
     "paragraphBlock",
     "fileDownload",
