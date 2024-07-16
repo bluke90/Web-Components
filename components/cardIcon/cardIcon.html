@@ -1,0 +1,70 @@
+﻿<template id="card-icon">
+    
+    <style>
+        .wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 1rem;
+            width: 12%;
+        }
+
+        .wrapper.dark{
+            background-color: #333;
+            color: white;
+        }
+        
+        .icon img{
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon.dark img{
+            filter: invert(1);
+        }
+        
+        .icon-wrapper {
+            margin-top: 1rem;
+            margin-right: 1rem;
+        }
+        
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: 1.1rem;
+            font-family: proxima-nova, sans-serif;
+            gap: 0.25rem;
+        }
+        .content.dark {
+            color: white;
+        }
+        
+        .title{
+            font-size: 1.75rem;
+            font-weight: bold;
+            font-family: Oswald, sans-serif;
+            margin-bottom: 0;
+            margin-top: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .title.dark {
+            color: white !important;
+        }
+        
+    </style>
+    
+    <div class="wrapper">
+        <div class="icon-wrapper"><img class="icon" alt="Icon to indicate a block of information"/></div>
+        <div class="content">
+            <h2 class="title"></h2>
+            <div class="content">
+                <slot name="content"></slot>
+            </div>
+        </div>
+    </div>
+    
+    
+</template>
