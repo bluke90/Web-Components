@@ -10,6 +10,16 @@
       -moz-box-shadow: 2px 2px 10px 5px #999999;
       padding-bottom: 1rem;
     }
+
+    .block.dark {
+      background-color: #414141 !important;
+      color: white !important;
+    }
+
+    .dark {
+      color: white !important;
+    }
+
     .information {
       display: flex;
       flex-direction: column;
@@ -26,14 +36,19 @@
       line-height: 28px;
     }
     slot[name="field-1"] {
-      font-family: Arial, Helvetica, serif;
-      font-size: 1rem;
+      font-family: proxima-nova ,Arial, Helvetica, serif;
+      font-size: 1.15rem;
       font-weight: 400;
     }
     slot[name="field-2"] {
-      font-family: Arial, Helvetica, serif;
-      font-size: 1rem;
+      font-family: proxima-nova ,Arial, Helvetica, serif;
+      font-size: 1.15rem;
     }
+    slot[name="field-2"] {
+      font-family: proxima-nova ,Arial, Helvetica, serif;
+      font-size: 1.15rem;
+    }
+
 
   </style>
 
@@ -46,6 +61,8 @@
       <slot name="field-1"></slot>
 
       <slot name="field-2"></slot>
+
+      <slot name="field-3"></slot>
     </div>
   </div>
 

@@ -8,13 +8,13 @@ class PersonCard extends HTMLElement {
     this._template = importer.templates.find(c => c.component === 'personCard');
     this.shadow.append(this._template.template.content.cloneNode(true));
 
+
     this._Block = this.shadow.querySelector('.block');
-    this._banner = this.shadow.querySelector('.banner');
     this._img = this.shadow.querySelector('.image');
   }
 
   static get observedAttributes() {
-    return ['link', 'alt-text'];
+    return ['link', 'alt-text', 'dark'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -27,6 +27,11 @@ class PersonCard extends HTMLElement {
         break;
       case 'alt-text':
         if (newValue) this._img.alt = newValue;
+        break;
+      case 'dark':
+        if (newValue === 'true') {
+          this._Block.classList.add('dark');
+        }
         break;
     }
 
