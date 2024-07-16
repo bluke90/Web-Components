@@ -78,6 +78,6 @@ class ComponentImporter {
 }
 
 let importer = new ComponentImporter(jQuery, drupalSettings);
-jQuery(document).ready(importer._init);
+importer._init().then(r => console.log('Web Components Loaded'));
 
 
