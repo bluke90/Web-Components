@@ -116,6 +116,7 @@ component-library:
         - Observed Attributes:
             - link - link to headshot image
             - alt-text - alt text for headshot image
+            - dark - if true, text will be white and background will be dark grey
 ![image](images/PersonCard.PNG) 
 
 ### SocialLinks
@@ -194,3 +195,16 @@ component-library:
             - text - Text to display in the link that will open the modal
             - button (true or false) - if true, a button will be displayed instead of a link
 ![image](images/modalView.PNG)
+
+### CardIcon
+    - Provides a card with an icon, title, and content
+        - Styling:
+            - 
+        - Slots:
+            - content - content of the card
+        - Observed Attributes:
+            - icon - path to icon
+            - alt-text - alt text for icon
+            - title - title of the card
+            - dark - if true, text will be white and background will be dark grey
+![image](images/cardIcon.PNG)
