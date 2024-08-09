@@ -1,0 +1,59 @@
+﻿<template id="nav-item">
+    <style>
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: lighter;
+            display: block;
+            padding: 0;
+            transition: background-color 100ms, color 100ms;
+            align-content: center;
+            text-align: center;
+            width: 100%;
+            height: 95%;
+        }
+        
+        li {
+            height: 100%;
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        
+        a:hover {
+            background-color: white;
+            color: black !important;
+        }
+        @media only screen and (max-width: 1024px) {
+            li {
+                width: 100%;
+            }
+            a {
+                width: 90%;
+                padding: 0;
+                line-height: 2.25;
+            }
+            
+        }
+
+        @media only screen and (min-width: 1025px) and (max-width: 1250px) {
+            li {
+                width: 8rem;
+            }
+            a {
+                font-size: 1rem;
+            }
+        }
+        
+        
+    </style>
+    
+    
+    <li class="wrapper">
+        <a id="nav-link" href="#"></a>
+    </li>
+</template>
